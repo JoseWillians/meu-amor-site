@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://josewillians.github.io/meu-amor-site",
+  "homepage": "https://josewillians.github.io/meu-amor-site/",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

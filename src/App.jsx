@@ -1,4 +1,7 @@
+import Contador from './assets/components/Contador.jsx';
+
 import './App.css';
+
 import MusicPlayer from './assets/components/MusicPlayer.jsx';
 import Carousel from './assets/components/Carousel.jsx';
 
@@ -10,11 +13,12 @@ export default function App() {
   return (
     <div className="container">
       <div className="carousel-container left">
-        <Carousel imagens={imagens} direction="up" />
+        <Carousel imagens={imagens} direction="down" />
       </div>
 
       <main>
         <h1>❤ Eu te amo ❤</h1>
+        <Contador />
         <MusicPlayer />
         <p className="mensagem">
          Desde que te conheci, sabíamos que havia algo especial.<br />
@@ -43,7 +47,7 @@ export default function App() {
       </main>
 
       <div className="carousel-container right">
-        <Carousel imagens={imagens} direction="down" />
+        <Carousel imagens={imagens} direction="right" />
       </div>
     </div>
   );

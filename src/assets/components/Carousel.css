@@ -1,0 +1,38 @@
+.carousel {
+  width: 20vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 90s linear infinite;
+}
+.carousel.up .carousel-inner {
+  animation-name: scroll-up;
+}
+
+.carousel.down .carousel-inner {
+  animation-name: scroll-down;
+}
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+.carousel-inner img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}

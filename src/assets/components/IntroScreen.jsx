@@ -24,10 +24,10 @@ const IntroScreen = () => {
       <div className="intro-box">
         <h1>💘 Feliz Dia dos Namorados! 💘</h1>
         <p>
-          Para uma melhor experiência, ative a função <strong>'Versão para computador'</strong><br />
+          Para uma melhor experiência no celular, ative a função <strong>'Versão para computador'</strong><br />
           clicando nos três pontos no canto superior direito.
         </p>
-        <p className="small">Com amor, este site foi feito especialmente para você ❤️</p>
+        <p className="small">❤️ Com amor, este site foi feito especialmente para você ❤️</p>
         <button className="intro-btn" onClick={handleClose}>Ver</button>
       </div>
       {hearts}

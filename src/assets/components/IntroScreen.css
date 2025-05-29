@@ -1,0 +1,68 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 2rem;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.intro-screen.fade-out {
+  opacity: 0;
+}
+
+.intro-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #000;
+  text-align: center;
+  max-width: 90%;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+}
+
+.intro-box h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffb3c1;
+}
+
+.intro-box strong {
+  color: #ffd6e0;
+}
+
+.intro-box .small {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffcdd2;
+}
+
+.intro-btn {
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.intro-btn:hover {
+  background-color: #ff1e47;
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}

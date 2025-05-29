@@ -1,0 +1,124 @@
+.music-player {
+  background-color: #ffe4ec;
+  border-radius: 16px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.details {
+  text-align: left;
+  flex: 1;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.artist {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-group button {
+  background: #e91e63;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  flex: 1 1 30%;
+  min-width: 80px;
+}
+
+.button-group button:hover {
+  background: #c2185b;
+}
+
+.progress-bar {
+  background: #ddd;
+  height: 6px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #e91e63;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+  .music-player {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .music-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cover {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .details {
+    text-align: center;
+  }
+
+  .button-group {
+    gap: 0.5rem;
+  }
+
+  .button-group button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}

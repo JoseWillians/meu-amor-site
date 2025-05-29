@@ -6,7 +6,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoseWillians/meu-amor-site.git" 
+    "url": "git+https://github.com/JoseWillians/meu-amor-site.git"
   },
   "scripts": {
     "dev": "vite --host",

@@ -6,7 +6,7 @@ import IntroScreen from './assets/components/IntroScreen.jsx';
 import './App.css';
 
 const imagens = [
-  "Imagem1.jpg", "Imagem2.jpg", "Imagem3.jpg", "Imagem4.jpg", "Imagem5.jpg", "Imagem6.jpg", "Imagem7.jpg", "Imagem8.jpg", "Imagem9.jpg", "Imagem10.jpg", "Imagem11.jpg", "Imagem12.jpg", "Imagem13.jpg", "Imagem14.jpg", "Imagem15.jpg", "Imagem16.jpg", "Imagem17.jpg", "Imagem18.jpg", "Imagem19.jpg", "Imagem20.jpg", "Imagem21.jpg", "Imagem22.jpg", "Imagem23.jpg", "Imagem24.jpg", "Imagem25.jpg", "Imagem26.jpg", "Imagem27.jpg", "Imagem28.jpg", "Imagem29.jpg", "Imagem30.jpg", "Imagem31.jpg", "Imagem32.jpg", "Imagem33.jpg", "Imagem34.jpg", "Imagem35.jpg", "Imagem36.jpg", "Imagem37.jpg", "Imagem38.jpg", "Imagem39.jpg"
+  "Imagem39.jpg", "Imagem1.jpg", "Imagem2.jpg", "Imagem3.jpg", "Imagem4.jpg", "Imagem5.jpg", "Imagem6.jpg", "Imagem7.jpg", "Imagem8.jpg", "Imagem9.jpg", "Imagem10.jpg", "Imagem11.jpg", "Imagem12.jpg", "Imagem13.jpg", "Imagem14.jpg", "Imagem15.jpg", "Imagem16.jpg", "Imagem17.jpg", "Imagem18.jpg", "Imagem19.jpg", "Imagem20.jpg", "Imagem21.jpg", "Imagem22.jpg", "Imagem23.jpg", "Imagem24.jpg", "Imagem25.jpg", "Imagem26.jpg", "Imagem27.jpg", "Imagem28.jpg", "Imagem29.jpg", "Imagem30.jpg", "Imagem31.jpg", "Imagem32.jpg", "Imagem33.jpg", "Imagem34.jpg", "Imagem35.jpg", "Imagem36.jpg", "Imagem37.jpg", "Imagem38.jpg"
 ];
 
 export default function App() {

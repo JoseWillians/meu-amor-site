@@ -21,6 +21,16 @@ const musicas = [
     src: `${import.meta.env.BASE_URL}musicas/musica4.mp3`,
     titulo: 'Tem Que Ser Você',
     capa: `${import.meta.env.BASE_URL}capas/capa1.jpg`
+  },
+  {
+    src: `${import.meta.env.BASE_URL}musicas/musica5.mp3`,
+    titulo: 'Retorno de Saturno',
+    capa: `${import.meta.env.BASE_URL}capas/capa3.jpg`
+  },
+  {
+    src: `${import.meta.env.BASE_URL}musicas/musica6.mp3`,
+    titulo: 'Mágica',
+    capa: `${import.meta.env.BASE_URL}capas/capa4.jpg`
   }
 ];
 

@@ -6,7 +6,7 @@
 .carousel-inner {
   display: flex;
   flex-direction: column;
-  animation: scroll 45s linear infinite;
+  animation: scroll 80s linear infinite;
   /* Ocupa a altura total da tela */
 }
 

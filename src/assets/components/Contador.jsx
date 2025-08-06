@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Contador.css";
 
-
-
 export default function Contador() {
   // 1) Inicializa todas as propriedades com 0
   const [tempo, setTempo] = useState({

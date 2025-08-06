@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import './MusicPlayer.css';
 
 const musicas = [
@@ -40,6 +40,16 @@ export default function MusicPlayer({ onPlay }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progresso, setProgresso] = useState(0);
 
+  const tocarProxima = useCallback(() => {
+    const audioAtual = audioRefs.current[indiceAtual];
+    audioAtual.pause();
+    audioAtual.currentTime = 0;
+
+    const proximo = (indiceAtual + 1) % musicas.length;
+    setIndiceAtual(proximo);
+    setIsPlaying(true);
+  }, [indiceAtual]);
+
   useEffect(() => {
     const audio = audioRefs.current[indiceAtual];
     audio.src = musicas[indiceAtual].src;
@@ -60,7 +70,7 @@ export default function MusicPlayer({ onPlay }) {
       audio.removeEventListener('timeupdate', atualizarProgresso);
       audio.removeEventListener('ended', tocarProximaAuto);
     };
-  }, [indiceAtual]);
+  }, [indiceAtual, tocarProxima]);
 
   useEffect(() => {
     // Pausa todas as outras músicas e reinicia o tempo
@@ -82,19 +92,9 @@ export default function MusicPlayer({ onPlay }) {
   const togglePlayPause = () => {
     setIsPlaying((prev) => {
       const next = !prev;
-      if (next && onPlay) onPlay(); // <- Notifica o App que começou a tocar
+      if (next && onPlay) onPlay();
       return next;
     });
-  };
-
-  const tocarProxima = () => {
-    const audioAtual = audioRefs.current[indiceAtual];
-    audioAtual.pause();
-    audioAtual.currentTime = 0;
-
-    const proximo = (indiceAtual + 1) % musicas.length;
-    setIndiceAtual(proximo);
-    setIsPlaying(true);
   };
 
   const tocarAnterior = () => {

@@ -29,7 +29,7 @@ export default function Contador() {
       const totalHoras = Math.floor(totalMinutos / 60);
       const totalDias = Math.floor(totalHoras / 24);
       const totalSemanas = Math.floor(totalDias / 7);
-      const totalMeses = Math.floor(totalDias / 30.4375);
+      const totalMeses = Math.floor(totalDias / 30.4);
 
       const horasRestantes = totalHoras % 24;
       const minutosRestantes = totalMinutos % 60;

@@ -27,7 +27,7 @@ body {
 }
 
 .carousel.right {
-  right: 0;
+  right: 10px;
 }
 
 main {

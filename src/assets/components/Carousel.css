@@ -16,6 +16,8 @@
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 10px;
+  border: 3.8px solid #FADCA9; /* Borda Rosa Suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .carousel.up .carousel-inner {
@@ -24,6 +26,15 @@
 
 .carousel.down .carousel-inner {
   animation-name: scroll-down;
+}
+
+/* Adiciona margem aos containers dos carrosséis */
+.carousel-container.left {
+  margin-left: 10px;
+}
+
+.carousel-container.right {
+  margin-right: 10px;
 }
 @keyframes scroll-up {
   0% { transform: translateY(0); }
@@ -42,5 +53,5 @@
 
 @keyframes scroll {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  100% { transform: translateY(-82%); }
 }

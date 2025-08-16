@@ -1,35 +1,42 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import './MusicPlayer.css';
 
+// Passo 1: Adicionamos a propriedade "artista" em cada música
 const musicas = [
   {
     src: `${import.meta.env.BASE_URL}musicas/musica1.mp3`,
     titulo: 'Amigo Apaixonado',
+    artista: 'Victor & Leo',
     capa: `${import.meta.env.BASE_URL}capas/capa1.jpg`
   },
   {
     src: `${import.meta.env.BASE_URL}musicas/musica2.mp3`,
     titulo: 'Meu Eu Em Você',
+    artista: 'Victor & Leo',
     capa: `${import.meta.env.BASE_URL}capas/capa1.jpg`
   },
   {
     src: `${import.meta.env.BASE_URL}musicas/musica3.mp3`,
     titulo: 'Na Linha do Tempo',
+    artista: 'Victor & Leo',
     capa: `${import.meta.env.BASE_URL}capas/capa2.jpg`
   },
   {
     src: `${import.meta.env.BASE_URL}musicas/musica4.mp3`,
     titulo: 'Tem Que Ser Você',
+    artista: 'Victor & Leo',
     capa: `${import.meta.env.BASE_URL}capas/capa1.jpg`
   },
   {
     src: `${import.meta.env.BASE_URL}musicas/musica5.mp3`,
     titulo: 'Retorno de Saturno',
+    artista: 'Detonautas',
     capa: `${import.meta.env.BASE_URL}capas/capa3.jpg`
   },
   {
     src: `${import.meta.env.BASE_URL}musicas/musica6.mp3`,
     titulo: 'Mágica',
+    artista: 'Calcinha Preta',
     capa: `${import.meta.env.BASE_URL}capas/capa4.jpg`
   }
 ];
@@ -117,7 +124,8 @@ export default function MusicPlayer({ onPlay }) {
         />
         <div className="details">
           <div className="title">{musicas[indiceAtual].titulo}</div>
-          <div className="artist">Victor&Leo</div>
+          {/* Passo 2: Alteramos a linha abaixo para ser dinâmica */}
+          <div className="artist">{musicas[indiceAtual].artista}</div>
         </div>
       </div>
 

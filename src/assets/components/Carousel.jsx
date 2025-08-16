@@ -5,7 +5,8 @@ export default function Carousel({ imagens, direction = 'up' }) {
     <div className={`carousel ${direction}`}>
       <div className="carousel-inner">
         {imagens.concat(imagens).map((img, i) => (
-          <img key={i} src={`imagens/${img}`} alt="amor" />
+          // A única alteração foi nesta linha, removendo o prefixo "imagens/"
+          <img key={i} src={img} alt="Uma linda memória" />
         ))}
       </div>
     </div>

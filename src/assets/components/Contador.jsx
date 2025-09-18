@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./Contador.css";
 
 export default function Contador() {
-  // 1) Inicializa todas as propriedades com 0
   const [tempo, setTempo] = useState({
+    anos: 0,
     totalMeses: 0,
     totalSemanas: 0,
     totalDias: 0,
@@ -13,7 +13,9 @@ export default function Contador() {
     horas: 0,
     minutos: 0,
     segundos: 0,
+    mesesRestantes: 0,
   });
+
   const fmt = (n) => n.toLocaleString('pt-BR');
   const dataInicio = new Date("2024-10-05T21:30:00");
 
@@ -29,11 +31,15 @@ export default function Contador() {
       const totalSemanas = Math.floor(totalDias / 7);
       const totalMeses = Math.floor(totalDias / 30.4);
 
+      const anos = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses - anos * 12;
+
       const horasRestantes = totalHoras % 24;
       const minutosRestantes = totalMinutos % 60;
       const segundosRestantes = totalSegundos % 60;
 
       setTempo({
+        anos,
         totalMeses,
         totalSemanas,
         totalDias,
@@ -43,6 +49,7 @@ export default function Contador() {
         horas: horasRestantes,
         minutos: minutosRestantes,
         segundos: segundosRestantes,
+        mesesRestantes,
       });
     };
 
@@ -51,8 +58,9 @@ export default function Contador() {
     return () => clearInterval(intervalo);
   }, []);
 
-  // 2) Desestruturamos para facilitar o JSX
   const {
+    anos,
+    mesesRestantes,
     totalMeses,
     totalSemanas,
     totalDias,
@@ -68,12 +76,25 @@ export default function Contador() {
     <div className="contador">
       <p>
         Estamos juntos há:<br />
-        <strong>{fmt(totalMeses)}</strong> meses,&nbsp;
-        <strong>{fmt(totalSemanas)}</strong> semanas,&nbsp;
-        <strong>{fmt(totalDias)}</strong> dias,&nbsp;
-        <strong>{fmt(totalHoras)}</strong> horas,&nbsp;
-        <strong>{fmt(totalMinutos)}</strong> minutos,&nbsp;
-        <strong>{fmt(totalSegundos)}</strong> segundos 💞
+        {anos > 0 && (
+          <>
+            <strong>{fmt(anos)}</strong> {anos === 1 ? "ano" : "anos"}
+            {mesesRestantes > 0 && (
+              <>
+                {" e "}
+                <strong>{fmt(mesesRestantes)}</strong> {mesesRestantes === 1 ? "mês" : "meses"}
+              </>
+            )}
+            ,&nbsp;
+          </>
+        )}
+        
+        <strong>{fmt(totalMeses)}</strong>  {totalMeses === 1 ? "mês" : "meses"},&nbsp;
+        <strong>{fmt(totalSemanas)}</strong> {totalSemanas === 1 ? "semana" : "semanas"},&nbsp;
+        <strong>{fmt(totalDias)}</strong> {totalDias === 1 ? "dia" : "dias"},&nbsp;
+        <strong>{fmt(totalHoras)}</strong> {totalHoras === 1 ? "hora" : "horas"},&nbsp;
+        <strong>{fmt(totalMinutos)}</strong> {totalMinutos === 1 ? "minuto" : "minutos"},&nbsp;
+        <strong>{fmt(totalSegundos)}</strong> {totalSegundos === 1 ? "segundo" : "segundos"} 💞
       </p>
     </div>
   );

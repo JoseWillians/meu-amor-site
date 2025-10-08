@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'; // Adicionado useEffect
 import { client } from './contentfulClient'; // Adicionado
 import Contador from './assets/components/Contador.jsx';

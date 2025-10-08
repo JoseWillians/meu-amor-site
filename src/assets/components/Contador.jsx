@@ -56,7 +56,7 @@ export default function Contador() {
     atualizar();
     const intervalo = setInterval(atualizar, 1000);
     return () => clearInterval(intervalo);
-  }, []);
+  }, [dataInicio]);
 
   const {
     anos,
@@ -67,9 +67,6 @@ export default function Contador() {
     totalHoras,
     totalMinutos,
     totalSegundos,
-    horas,
-    minutos,
-    segundos,
   } = tempo;
 
   return (

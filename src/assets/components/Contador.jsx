@@ -60,7 +60,6 @@ export default function Contador() {
 
   const {
     anos,
-    mesesRestantes,
     totalMeses,
     totalSemanas,
     totalDias,
@@ -75,17 +74,9 @@ export default function Contador() {
         Estamos juntos há:<br />
         {anos > 0 && (
           <>
-            <strong>{fmt(anos)}</strong> {anos === 1 ? "ano" : "anos"}
-            {mesesRestantes > 0 && (
-              <>
-                {" e "}
-                <strong>{fmt(mesesRestantes)}</strong> {mesesRestantes === 1 ? "mês" : "meses"}
-              </>
-            )}
-            ,&nbsp;
+            <strong>{fmt(anos)}</strong> {anos === 1 ? "ano" : "anos"},&nbsp;
           </>
         )}
-        
         <strong>{fmt(totalMeses)}</strong>  {totalMeses === 1 ? "mês" : "meses"},&nbsp;
         <strong>{fmt(totalSemanas)}</strong> {totalSemanas === 1 ? "semana" : "semanas"},&nbsp;
         <strong>{fmt(totalDias)}</strong> {totalDias === 1 ? "dia" : "dias"},&nbsp;

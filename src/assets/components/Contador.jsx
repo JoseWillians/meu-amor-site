@@ -32,7 +32,7 @@ export default function Contador() {
       const totalMeses = Math.floor(totalDias / 30.4);
 
       const anos = Math.floor(totalMeses / 12);
-      const mesesRestantes = totalMeses - anos * 12;
+      const mesesRestantes = totalMeses - (anos * 12);
 
       const horasRestantes = totalHoras % 24;
       const minutosRestantes = totalMinutos % 60;
@@ -66,6 +66,7 @@ export default function Contador() {
     totalHoras,
     totalMinutos,
     totalSegundos,
+    mesesRestantes,
   } = tempo;
 
   return (
@@ -74,10 +75,14 @@ export default function Contador() {
         Estamos juntos há:<br />
         {anos > 0 && (
           <>
-            <strong>{fmt(anos)}</strong> {anos === 1 ? "ano" : "anos"},&nbsp;
+            <strong>{fmt(anos)}</strong> {anos === 1 ? "ano" : "anos"}
+            {mesesRestantes > 0 && (
+              <> e <strong>{mesesRestantes}</strong> {mesesRestantes === 1 ? "mês" : "meses"}</>
+            )}
+            ,&nbsp;
           </>
         )}
-        <strong>{fmt(totalMeses)}</strong>  {totalMeses === 1 ? "mês" : "meses"},&nbsp;
+        <strong>{fmt(totalMeses)}</strong> {totalMeses === 1 ? "mês" : "meses"},&nbsp;
         <strong>{fmt(totalSemanas)}</strong> {totalSemanas === 1 ? "semana" : "semanas"},&nbsp;
         <strong>{fmt(totalDias)}</strong> {totalDias === 1 ? "dia" : "dias"},&nbsp;
         <strong>{fmt(totalHoras)}</strong> {totalHoras === 1 ? "hora" : "horas"},&nbsp;

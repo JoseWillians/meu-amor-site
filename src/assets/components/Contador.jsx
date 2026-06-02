@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Contador.css";
 
+const dataInicio = new Date("2024-10-05T21:30:00");
+
 export default function Contador() {
   const [tempo, setTempo] = useState({
     anos: 0,
@@ -17,7 +19,6 @@ export default function Contador() {
   });
 
   const fmt = (n) => n.toLocaleString('pt-BR');
-  const dataInicio = new Date("2024-10-05T21:30:00");
 
   useEffect(() => {
     const atualizar = () => {
@@ -56,7 +57,7 @@ export default function Contador() {
     atualizar();
     const intervalo = setInterval(atualizar, 1000);
     return () => clearInterval(intervalo);
-  }, [dataInicio]);
+  }, []);
 
   const {
     anos,

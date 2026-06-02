@@ -1,12 +1,19 @@
 import './Carousel.css';
 
-export default function Carousel({ imagens, direction = 'up' }) {
+export default function Carousel({ imagens, direction = 'up', onImageClick }) {
   return (
     <div className={`carousel ${direction}`}>
       <div className="carousel-inner">
         {imagens.concat(imagens).map((img, i) => (
-          // A única alteração foi nesta linha, removendo o prefixo "imagens/"
-          <img key={i} src={img} alt="Uma linda memória" />
+          <button
+            className="carousel-photo-button"
+            key={`${img}-${i}`}
+            onClick={() => onImageClick?.(img)}
+            type="button"
+            aria-label="Abrir foto em destaque"
+          >
+            <img src={img} alt="" loading="lazy" />
+          </button>
         ))}
       </div>
     </div>
